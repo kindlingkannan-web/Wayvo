@@ -1,4 +1,4 @@
-# 🌍 AI Travel Agent — Autonomous Travel Planner & Co-Pilot
+# 🌍 Wayvo — Autonomous AI Travel Agent & Co-Pilot
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
@@ -6,7 +6,7 @@
 [![React](https://img.shields.io/badge/React-18.3-61dafb?style=flat&logo=react)](https://react.dev/)
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-success)](#)
 
-> A full-stack, autonomous AI Travel Agent that crafts realistic, geographically sound, time-feasible itineraries, monitors disruptions in real time, and dynamically optimizes your trip on the go.
+> **Wayvo** is a full-stack, autonomous AI Travel Agent that crafts realistic, geographically sound, time-feasible itineraries, monitors disruptions in real time, and dynamically optimizes your trip on the go.
 
 ---
 
@@ -45,7 +45,7 @@
 ## 🏗️ Architecture & Project Structure
 
 ```
-ai-travel-agent/
+wayvo/
 ├── app/
 │   ├── api/
 │   │   ├── plan/route.ts          # AI & clustered itinerary generation
@@ -78,6 +78,8 @@ ai-travel-agent/
 │   ├── emergencyData.ts           # Curated emergency directory for 30+ nations
 │   └── types.ts                   # Unified TypeScript definitions
 ├── public/                        # Static assets & icons
+├── scripts/
+│   └── deploy-github.js           # 1-command GitHub deployment script
 ├── tailwind.config.js             # Tailwind CSS configuration with dark mode class
 └── tsconfig.json                  # Strict TypeScript configuration
 ```
@@ -92,8 +94,8 @@ ai-travel-agent/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yashliveinsaan/ai-travel-agent.git
-cd ai-travel-agent
+git clone https://github.com/yashliveinsaan/Wayvo.git
+cd Wayvo
 ```
 
 ### 2. Install Dependencies
@@ -126,7 +128,7 @@ npm start
 
 ---
 
-## 🧪 Testing the Core Scenarios
+## 🧪 Testing Core Scenarios
 
 1. **Test Geographical Accuracy**: Enter destination `Jaipur`, 3 days, budget `₹35,000`. Observe how Day 1 stays strictly in the Northern Amer/Nahargarh ridge, Day 2 focuses on the Walled Pink City core, and Day 3 covers the Southern Cultural Quarter with zero duplicate locations.
 2. **Test "I'm Running Late"**: Mark a 45-minute delay on Day 1. Watch the engine automatically reflow downstream activities while protecting your pinned spots.

@@ -6,7 +6,7 @@ const http = require('isomorphic-git/http/node');
 
 const repoDir = path.resolve(__dirname, '..');
 const REPO_OWNER = 'yashliveinsaan';
-const REPO_NAME = 'ai-travel-agent';
+const REPO_NAME = 'Wayvo';
 const REMOTE_URL = `https://github.com/${REPO_OWNER}/${REPO_NAME}.git`;
 
 async function promptToken() {
@@ -16,7 +16,7 @@ async function promptToken() {
   });
 
   return new Promise((resolve) => {
-    rl.question('\n🔑 Enter your GitHub Personal Access Token (PAT) [classic or fine-grained]: ', (answer) => {
+    rl.question('\n🔑 Enter your GitHub Personal Access Token (PAT): ', (answer) => {
       rl.close();
       resolve(answer.trim());
     });
@@ -25,7 +25,7 @@ async function promptToken() {
 
 async function main() {
   console.log('====================================================');
-  console.log(`🚀 Deploying AI Travel Agent to GitHub: ${REPO_OWNER}/${REPO_NAME}`);
+  console.log(`🚀 Deploying Wayvo to GitHub: ${REPO_OWNER}/${REPO_NAME}`);
   console.log('====================================================');
 
   let token = process.argv[2] || process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
@@ -47,15 +47,8 @@ async function main() {
 
   if (!token) {
     console.log('\n❌ No GitHub Token provided.');
-    console.log('\nTo deploy to GitHub, you need a Personal Access Token with "repo" scope:');
-    console.log('1. Visit: https://github.com/settings/tokens/new');
-    console.log('2. Note: "ai-travel-agent deploy"');
-    console.log('3. Select scope: [x] repo (Full control of private repositories)');
-    console.log('4. Click "Generate token" and copy the token (starts with ghp_...)');
-    console.log('\nThen run:');
+    console.log('\nRun:');
     console.log('   npm run deploy -- <YOUR_GITHUB_TOKEN>');
-    console.log('   OR');
-    console.log('   set GITHUB_TOKEN=your_token && npm run deploy');
     process.exit(1);
   }
 
@@ -69,7 +62,7 @@ async function main() {
       dir: repoDir,
       remote: 'origin',
       ref: 'main',
-      force: false,
+      force: true,
       onAuth: () => ({
         username: token,
         password: ''
@@ -82,12 +75,8 @@ async function main() {
   } catch (error) {
     if (error.code === 'HttpError' && error.data && error.data.statusCode === 401) {
       console.error('\n❌ Authentication failed: Invalid token or expired permissions.');
-      console.error('Please verify your token has "repo" permissions at https://github.com/settings/tokens');
     } else if (error.code === 'HttpError' && error.data && error.data.statusCode === 404) {
       console.error(`\n❌ Repository not found at https://github.com/${REPO_OWNER}/${REPO_NAME}`);
-      console.error('If you have not created the repository on GitHub yet, please create it at:');
-      console.error(`👉 https://github.com/new?name=${REPO_NAME}&owner=${REPO_OWNER}`);
-      console.error('Then re-run this script to push your code.');
     } else {
       console.error('\n❌ Push error:', error.message || error);
     }

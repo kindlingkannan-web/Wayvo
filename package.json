@@ -1,15 +1,15 @@
 {
-  "name": "ai-travel-agent",
+  "name": "wayvo",
   "version": "1.0.0",
-  "description": "Production-grade autonomous AI Travel Agent that dynamically crafts, validates, refits, and monitors feasible travel itineraries with live APIs, dark mode, and localized neighborhood clustering.",
+  "description": "Wayvo — Production-grade autonomous AI Travel Agent that dynamically crafts, validates, refits, and monitors feasible travel itineraries with live APIs, dark mode, and localized neighborhood clustering.",
   "author": "yashliveinsaan",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yashliveinsaan/ai-travel-agent.git"
+    "url": "https://github.com/yashliveinsaan/Wayvo.git"
   },
-  "homepage": "https://github.com/yashliveinsaan/ai-travel-agent#readme",
+  "homepage": "https://github.com/yashliveinsaan/Wayvo#readme",
   "bugs": {
-    "url": "https://github.com/yashliveinsaan/ai-travel-agent/issues"
+    "url": "https://github.com/yashliveinsaan/Wayvo/issues"
   },
   "scripts": {
     "dev": "next dev",
