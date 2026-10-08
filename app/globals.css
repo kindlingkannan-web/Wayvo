@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-paper text-ink transition-colors duration-200;
+}
+
+html.dark body {
+  @apply bg-darkbg text-slate-100;
+}
+
+.card {
+  @apply rounded-3xl bg-white p-5 shadow-sm ring-1 ring-ink/10 transition-colors duration-200;
+}
+
+html.dark .card {
+  @apply bg-darkcard text-slate-100 ring-white/10;
+}
+
+.btn {
+  @apply rounded-2xl bg-ink px-4 py-2.5 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-lagoon disabled:opacity-50 transition;
+}
+
+html.dark .btn {
+  @apply bg-lagoon text-white hover:bg-lagoon/90;
+}
+
+.btn2 {
+  @apply rounded-2xl bg-white px-3 py-2 text-sm font-medium ring-1 ring-ink/20 hover:bg-ink/5 transition;
+}
+
+html.dark .btn2 {
+  @apply bg-darkcard text-slate-200 ring-white/15 hover:bg-white/10;
+}
+
+.inp {
+  @apply w-full rounded-2xl border border-ink/20 bg-white px-3 py-2.5 text-sm transition;
+}
+
+html.dark .inp {
+  @apply border-white/20 bg-darkpaper text-white;
+}
+
+.tag {
+  @apply rounded-full px-2.5 py-0.5 text-xs font-medium;
+}
+
+html.dark .bg-white {
+  @apply bg-darkcard text-slate-100;
+}
+
+html.dark .bg-paper {
+  @apply bg-darkpaper text-slate-200;
+}
+
+html.dark .text-ink {
+  @apply text-slate-100;
+}
+
+html.dark .text-ink\/70 {
+  @apply text-slate-300;
+}
+
+html.dark .text-ink\/60 {
+  @apply text-slate-400;
+}
+
+html.dark .text-ink\/50 {
+  @apply text-slate-400;
+}
+
+html.dark .text-ink\/40 {
+  @apply text-slate-500;
+}
+
+html.dark .border-ink\/10 {
+  @apply border-white/10;
+}
+
+html.dark .ring-ink\/10 {
+  @apply ring-white/10;
+}
