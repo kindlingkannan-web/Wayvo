@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import type { GroupType, FoodPreference } from "@/lib/types";
-import { SparklesIcon, CalendarIcon, MapPinIcon } from "./Icons";
+import { SparklesIcon, CalendarIcon } from "./Icons";
 
 const LANGUAGES: [string, string][] = [
   ["English", "en-US"],
@@ -135,19 +135,14 @@ export function PlanForm({ onSubmit, busy, error }: PlanFormProps) {
           <label className="text-xs font-bold uppercase tracking-wider text-ink/60 block mb-1">
             Destination
           </label>
-          <div className="relative">
-            <input
-              type="text"
-              required
-              className="inp text-sm pl-9"
-              placeholder="e.g. Jaipur, Tokyo, Paris, Goa..."
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-            />
-            <div className="absolute left-3 top-3 text-ink/40">
-              <MapPinIcon className="w-4 h-4" />
-            </div>
-          </div>
+          <input
+            type="text"
+            required
+            className="inp text-sm"
+            placeholder="e.g. Jaipur, Tokyo, Paris, Goa..."
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
+          />
           <div className="mt-2 flex flex-wrap items-center gap-1.5 text-xs text-ink/60">
             <span>Popular:</span>
             {quickDests.map((d) => (
