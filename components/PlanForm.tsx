@@ -111,7 +111,7 @@ export function PlanForm({ onSubmit, busy, error }: PlanFormProps) {
         <div className="max-w-2xl space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full bg-lagoon/20 px-3 py-1 text-xs font-bold text-lagoon border border-lagoon/30">
             <SparklesIcon className="w-4 h-4" />
-            <span>AI Automated Travel Agent</span>
+            <span>Wayvo AI Travel Agent</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
             Plan a Feasible, Realistic Trip
@@ -328,7 +328,7 @@ export function PlanForm({ onSubmit, busy, error }: PlanFormProps) {
             <div className="flex items-center gap-3">
               <div className="h-5 w-5 animate-spin rounded-full border-2 border-lagoon border-t-transparent" />
               <div className="font-extrabold text-sm text-ink">
-                AI Travel Agent Planning Trip ({stepIdx + 1}/{GENERATION_STEPS.length})
+                Wayvo Planning Trip ({stepIdx + 1}/{GENERATION_STEPS.length})
               </div>
             </div>
             <p className="text-xs text-lagoon font-semibold animate-pulse">

@@ -45,10 +45,10 @@ export function Navbar({
           </div>
           <div>
             <span className="text-base font-black tracking-tight text-ink dark:text-white block leading-none">
-              AI Travel Agent
+              Wayvo
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-wider text-lagoon">
-              Automated Dynamic Planner
+              AI Travel Agent &amp; Co-Pilot
             </span>
           </div>
         </div>
