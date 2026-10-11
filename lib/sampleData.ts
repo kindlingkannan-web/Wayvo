@@ -445,18 +445,18 @@ export function generateSamplePlan(params: {
     ];
   } else {
     // Generic / Fallback city: Create realistic clusters using live attractions or city defaults
-    const cluster1Attractions = (params.liveAttractions && params.liveAttractions.length >= 2)
+    const cluster1Attractions: Partial<Activity>[] = (params.liveAttractions && params.liveAttractions.length >= 2)
       ? params.liveAttractions.slice(0, 2)
       : [
-          { name: `${params.destination} Historic Centre`, description: "Central landmark in the city core.", indoor: false, priority: 1, ticket: 200, waitMin: 15, visitMin: 90, open: "09:00", close: "18:00" },
-          { name: `${params.destination} City Museum`, description: "Indoor cultural repository.", indoor: true, priority: 2, ticket: 150, waitMin: 15, visitMin: 75, open: "09:30", close: "17:30" },
+          { name: `${params.destination} Historic Centre`, description: "Central landmark in the city core.", indoor: false, priority: 1 as const, ticket: 200, waitMin: 15, visitMin: 90, open: "09:00", close: "18:00" },
+          { name: `${params.destination} City Museum`, description: "Indoor cultural repository.", indoor: true, priority: 2 as const, ticket: 150, waitMin: 15, visitMin: 75, open: "09:30", close: "17:30" },
         ];
 
-    const cluster2Attractions = (params.liveAttractions && params.liveAttractions.length >= 4)
+    const cluster2Attractions: Partial<Activity>[] = (params.liveAttractions && params.liveAttractions.length >= 4)
       ? params.liveAttractions.slice(2, 4)
       : [
-          { name: `${params.destination} Botanical Gardens`, description: "Scenic open-air park.", indoor: false, priority: 2, ticket: 100, waitMin: 10, visitMin: 75, open: "08:00", close: "18:00" },
-          { name: `${params.destination} Art Gallery`, description: "Regional arts and exhibitions.", indoor: true, priority: 2, ticket: 120, waitMin: 10, visitMin: 70, open: "10:00", close: "18:00" },
+          { name: `${params.destination} Botanical Gardens`, description: "Scenic open-air park.", indoor: false, priority: 2 as const, ticket: 100, waitMin: 10, visitMin: 75, open: "08:00", close: "18:00" },
+          { name: `${params.destination} Art Gallery`, description: "Regional arts and exhibitions.", indoor: true, priority: 2 as const, ticket: 120, waitMin: 10, visitMin: 70, open: "10:00", close: "18:00" },
         ];
 
     cityClusters = [
