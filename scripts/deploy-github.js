@@ -5,7 +5,7 @@ const git = require('isomorphic-git');
 const http = require('isomorphic-git/http/node');
 
 const repoDir = path.resolve(__dirname, '..');
-const REPO_OWNER = 'yashliveinsaan';
+const REPO_OWNER = 'kindlingkannan-web';
 const REPO_NAME = 'Wayvo';
 const REMOTE_URL = `https://github.com/${REPO_OWNER}/${REPO_NAME}.git`;
 

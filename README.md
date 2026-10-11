@@ -94,7 +94,7 @@ wayvo/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yashliveinsaan/Wayvo.git
+git clone https://github.com/kindlingkannan-web/Wayvo.git
 cd Wayvo
 ```
 
@@ -143,4 +143,4 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 ## 👤 Author
-Developed and maintained by **[yashliveinsaan](https://github.com/yashliveinsaan)**.
+Developed and maintained by **[kindlingkannan-web](https://github.com/kindlingkannan-web)**.
