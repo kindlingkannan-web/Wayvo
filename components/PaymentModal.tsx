@@ -69,7 +69,7 @@ export function PaymentModal({
     let isMounted = true;
     async function loadConfig() {
       try {
-        const res = await fetch("/api/paypal/config");
+        const res = await fetch("/api/paypal/config", { cache: "no-store" });
         const data: PayPalConfig = await res.json();
         if (isMounted) {
           setConfig(data);
