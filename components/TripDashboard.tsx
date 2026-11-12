@@ -331,18 +331,31 @@ export function TripDashboard({
                 onClick={() => onNavigateTab("Budget")}
                 className="text-xs font-bold text-lagoon hover:underline"
               >
-                Details ➔
+                Checkout &amp; Details ➔
               </button>
             </div>
             <div className="mt-2 text-xl font-black text-ink">{inr(b.planned)} / {inr(plan.budget)}</div>
             <div className="mt-1 text-xs text-ink/70">
               Remaining: <b className={b.over ? "text-alert" : "text-lagoon"}>{inr(b.remaining)}</b>
             </div>
+            {plan.paymentSummary && plan.paymentSummary.totalPaid > 0 && (
+              <div className="mt-2 rounded-xl bg-emerald-50 p-2 text-[11px] font-bold text-emerald-700 flex items-center justify-between">
+                <span>✓ Paid via PayPal:</span>
+                <span>{inr(plan.paymentSummary.totalPaid)}</span>
+              </div>
+            )}
             {b.over && (
               <p className="mt-2 rounded-xl bg-alert/10 p-2 text-[11px] font-bold text-alert">
                 ⚠ Over budget by {inr(b.overAmount)}.
               </p>
             )}
+            <button
+              onClick={() => onNavigateTab("Budget")}
+              className="mt-3 w-full rounded-2xl bg-lagoon/10 py-2 text-xs font-bold text-lagoon hover:bg-lagoon hover:text-white transition flex items-center justify-center gap-1.5"
+            >
+              <span>💳</span>
+              <span>Manage PayPal Checkout</span>
+            </button>
           </div>
         </div>
       </div>

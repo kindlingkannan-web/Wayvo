@@ -314,6 +314,7 @@ export default function App() {
         {tab === "Budget" && plan && (
           <BudgetView
             plan={plan}
+            onUpdatePlan={setPlan}
             onUpdateBudget={(newBudget) => {
               setPlan({ ...plan, budget: newBudget });
               showToast(`Trip budget updated to ₹${newBudget.toLocaleString("en-IN")}`);

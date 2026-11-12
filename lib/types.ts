@@ -1,3 +1,5 @@
+import type { TripPaymentSummary } from "./paymentTypes";
+
 export type Src = "AI estimate" | "Sample data" | "Live";
 
 export type GroupType = "Solo" | "Friends" | "Family" | "Couple" | "Other";
@@ -79,6 +81,7 @@ export interface Plan {
   transportPerDay: number | null;
   days: Day[];
   alternatives: Activity[];
+  paymentSummary?: TripPaymentSummary;
 }
 
 export interface WeatherDay {

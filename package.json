@@ -15,7 +15,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "node scripts/deploy-github.js"
+    "deploy": "node scripts/deploy-github.js",
+    "test:paypal": "tsc scripts/test-paypal-suite.ts --outDir dist-test --module commonjs --target es2020 --moduleResolution node --esModuleInterop && node dist-test/scripts/test-paypal-suite.js && node -e \"fs.rmSync('dist-test', { recursive: true, force: true })\""
   },
   "dependencies": {
     "next": "14.2.15",
